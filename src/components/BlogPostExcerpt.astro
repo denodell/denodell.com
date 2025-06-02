@@ -10,7 +10,7 @@ const { post, variant } = Astro.props;
     class:list={[
       `md:w-64 mb-0 bg-center bg-cover bg-[url('/images/journal/${post.slug}.avif')]`,
       variant === "home" ? "h-24" : "h-32",
-    ]}></a>
+    ]} aria-label={post.title}></a>
   <div>
     <Link
       href={`/journal/${post.slug}`}
