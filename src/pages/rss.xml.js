@@ -19,6 +19,9 @@ export async function GET(context) {
 			content: sanitizeHtml(parser.render(post.body), {
 				allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
 			}),
+			customData:
+				post.data.tags?.map((tag) => `<category>${tag}</category>`).join("") ??
+				"",
 		})),
 		trailingSlash: false,
 	});
