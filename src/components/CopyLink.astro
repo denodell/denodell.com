@@ -1,0 +1,17 @@
+<button id="copy-link" class="underline underline-offset-4 decoration-2 decoration-solid decoration-gray-300 hover:decoration-black transition cursor-pointer">Copy link</button>
+<span id="copy-status" class="ml-2 text-base md:text-xl text-gray-500"></span>
+
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    const button = document.getElementById('copy-link');
+    const status = document.getElementById('copy-status');
+
+    button?.addEventListener('click', () => {
+      navigator.clipboard.writeText(window.location.href)
+        .then(() => {
+          status.textContent = 'Link copied!';
+          setTimeout(() => status.textContent = '', 2000);
+        });
+    });
+  });
+</script>

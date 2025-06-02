@@ -1,0 +1,76 @@
+---
+import ContentWrapper from "../components/ContentWrapper.astro";
+import H2Title from "../components/H2Title.astro";
+import ImageBlock from "../components/ImageBlock.astro";
+import Title from "../components/Title.astro";
+import { Content, frontmatter } from "../content/books.md";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Author" slug="books">
+  <ContentWrapper>
+    <Title>Books</Title>
+
+    <ImageBlock image="/images/magazine.jpg" content={frontmatter.intro} />
+
+    <div
+      class="prose prose-p:font-mono text-base md:text-xl/8 max-w-none mb-8 md:mb-16"
+    >
+      <Content />
+    </div>
+
+    <H2Title>My Books</H2Title>
+
+    <div
+      class="flex gap-4 mb-4 ms--20 me--20 p-5 gap-6 rounded-lg items-start md:items-center text-2xl/9 bg-[#eee]"
+    >
+      <a href="/books/pro-javascript-development/"
+        ><img
+          class="w-35 rounded-lg shadow-lg"
+          src="/images/pro-javascript-development.jpg"
+          alt="Pro JavaScript Development book cover"
+        /></a
+      >
+      <div>
+        <div class="text-base md:text-xl">
+          <span class="font-medium">Pro JavaScript Development</span><br />
+          Coding, Capabilities, and Tooling<br />
+          <small>Apress, 2014</small>
+        </div>
+        <p class="mt-2">
+          <a
+            href="/books/pro-javascript-development/"
+            class="inline-block font-sans rounded-xl bg-blue-950 text-white text-sm p-2 px-5 text-xs md:text-base"
+            >Read more about its impact</a
+          >
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="flex gap-4 mb-16 ms--20 me--20 p-5 gap-6 rounded-lg items-start md:items-center text-2xl/9 bg-[#eee]"
+    >
+      <a href="/books/pro-javascript-ria-techniques/"
+        ><img
+          class="w-35 rounded-lg shadow-lg"
+          src="/images/pro-javascript-ria-techniques.jpg"
+          alt="Pro JavaScript RIA Techniques book cover"
+        />
+        <div>
+          <div class="text-base md:text-xl">
+            <span class="font-medium">Pro JavaScript RIA Techniques</span><br />
+            Best Practices, Performance, and Presentation<br />
+            <small>Apress, 2009</small>
+          </div>
+          <p class="mt-2">
+            <a
+              href="/books/pro-javascript-ria-techniques/"
+              class="inline-block font-sans rounded-xl bg-blue-950 text-white text-sm p-2 px-5 text-xs md:text-base"
+              >Read more about its impact</a
+            >
+          </p>
+        </div>
+      </a>
+    </div>
+  </ContentWrapper></BaseLayout
+>

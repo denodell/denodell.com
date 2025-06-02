@@ -1,0 +1,11 @@
+---
+const { currentSlug, slug } = Astro.props;
+---
+
+<a
+    href={"/" + slug + "/"}
+    class:list={[
+        "font-sans text-sm md:text-3xl underline underline-offset-4 decoration-2 decoartion-solid decoration-gray-300 hover:decoration-black transition",
+        currentSlug === slug ? "font-medium" : ""
+    ]}><slot />.</a>
+        

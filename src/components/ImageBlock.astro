@@ -1,0 +1,8 @@
+---
+const { image, alt, content } = Astro.props;
+---
+
+<div class="flex gap-3 md:gap-6 mb-8 md:mb-16 ms--20 me--20 p-3 md:p-5 rounded-lg items-start md:items-center text-2xl/9 italic bg-[#eee]">
+    <img class="w-17 md:w-35 rounded-lg shadow-lg" src={image} alt={alt ?? "Den Odell"} width="150" height="168">
+    <p class="text-sm md:text-2xl">{content}</p>
+</div>

@@ -1,0 +1,29 @@
+---
+const { slug } = Astro.props;
+---
+
+<div id="devto-meta" data-slug={slug}>
+  <script is:inline>
+    const username = "denodell";
+    const meta = document.getElementById("devto-meta");
+    const slug = meta.dataset.slug;
+
+    fetch(`#https://dev.to/api/articles/${username}/${slug}`)
+      .then(res => res.json())
+      .then(post => {
+        const html = `
+          <p>
+            ❤️ ${post.public_reactions_count} &nbsp;
+            💬 ${post.comments_count} &nbsp;
+            <a href="${post.url}" target="_blank" rel="noopener noreferrer">
+              Join the conversation on dev.to
+            </a>
+          </p>
+        `;
+        meta.innerHTML = html;
+      })
+      .catch(() => {
+        meta.innerHTML = `<p><a href="https://dev.to/${username}" target="_blank">View on dev.to</a></p>`;
+      });
+  </script>
+</div>

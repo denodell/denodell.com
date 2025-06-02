@@ -1,0 +1,100 @@
+---
+import ContentWrapper from "../../components/ContentWrapper.astro";
+import CopyLink from "../../components/CopyLink.astro";
+import DevToMeta from "../../components/DevToMeta.astro";
+import Link from "../../components/Link.astro";
+import NewsletterSignup from "../../components/NewsletterSignup.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+	const allPosts = import.meta.glob("../../content/journal/*.md", {
+		eager: true,
+	});
+
+	return Object.keys(allPosts).map((filePath) => {
+		const slug = filePath.split("/journal/")[1].replace(".md", "");
+
+		return {
+			params: { slug },
+		};
+	});
+}
+
+const { slug } = Astro.params;
+
+const allPosts = import.meta.glob("../../content/journal/*.md", {
+	eager: true,
+});
+
+const postEntry = Object.entries(allPosts).find(([path]) =>
+	path.includes(`${slug}.md`),
+);
+
+if (!postEntry) {
+	throw new Error(`No post found for slug: ${slug}`);
+}
+
+const { frontmatter, default: Content } = postEntry[1];
+---
+
+<BaseLayout title={frontmatter.title} slug="journal">
+  <ContentWrapper class="md:py-0">
+    <article class="relative">
+      <div
+        class={"w-auto max-w-none -mx-24 h-72 md:h-128 bg-[url('/images/journal/" +
+          slug +
+          ".avif')] bg-cover bg-center"}
+      >
+      </div>
+
+      <h1
+        class="relative -mt-8 md:-mt-16 mb-1 text-3xl md:text-6xl font-bold font-sans tracking-tight"
+      >
+        <span class="block -mx-2 md:-mx-4 p-2 md:p-4 bg-background text-black"
+          >{frontmatter.title}</span
+        >
+      </h1>
+
+      <p class="text-xs md:text-base text-gray-500 mt-0 mb-8 md:mb-24">
+        {
+          new Date(frontmatter.date).toLocaleDateString("en-GB", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })
+        } &mdash; by Den Odell &mdash; ⏱️ {frontmatter.readingTime} read
+      </p>
+
+      <div
+        class="prose prose-xl prose-hr:border-t-gray-300 prose-hr:w-[100px] prose-hr:my-8 md:prose-hr:my-12 prose-h2:font-sans prose-h2:text-xl md:prose-h2:text-3xl prose-p:text-base/7 md:prose-p:text-2xl/10 prose-p:text-black prose-li:text-black prose-ul:ps-4 prose-li:text-sm/7 md:prose-li:text-2xl/10 max-w-none"
+      >
+        <Content />
+        <hr>
+      </div>
+
+      <p class="text-sm md:text-xl">
+        <span class="font-medium">Share</span>: <Link
+          href={`https://x.com/intent/tweet?url=https://denodell.com/journal/${slug}`}
+          >Twitter / X</Link
+        > · <Link
+          href={`https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://denodell.com/journal/${slug}`}
+          >LinkedIn</Link
+        > · <CopyLink />
+      </p>
+
+      <div class="mt-16 mb-8 text-black bg-background text-sm md:text-xl">
+        <a
+          href="/journal/"
+          class="underline underline-offset-4 decoration-2 decoartion-solid decoration-gray-300 hover:decoration-black transition"
+          >← View all posts</a
+        >
+      </div>
+
+      <!-- 
+    <DevToMeta slug={slug} />
+    -->
+    </article>
+  </ContentWrapper>
+
+  <NewsletterSignup />
+</BaseLayout>

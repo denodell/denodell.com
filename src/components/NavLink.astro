@@ -1,0 +1,11 @@
+---
+const { slug, currentSlug } = Astro.props;
+---
+
+<a href={`/${slug}/`} rel="prefetch" class={[
+        "px-1 md:px-2 text-sm md:text-xl",
+        currentSlug === slug ? "bg-[url('https://s2.svgbox.net/pen-brushes.svg?ic=brush-1&color=ffff43')]" : ""
+    ].join(" ")} {...currentSlug === slug ? {'aria-current':'page'} : {}}
+    >
+    <slot />
+</a>                                

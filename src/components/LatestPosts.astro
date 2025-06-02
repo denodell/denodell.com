@@ -1,0 +1,37 @@
+---
+import BlogPostExcerpt from "./BlogPostExcerpt.astro";
+import BlogPostExcerptHome from "./BlogPostExcerptHome.astro";
+import H2Title from "./H2Title.astro";
+import Link from "./Link.astro";
+const { title, variant } = Astro.props;
+
+const allPosts = import.meta.glob("../content/journal/*.md", {
+	eager: true,
+});
+
+const posts = Object.entries(allPosts)
+	.slice(0, 3) // Limit to the latest 3 posts
+	.map(([path, post]) => {
+		const slug = path.split("/journal/")[1].replace(".md", "");
+		return {
+			slug,
+			title: post.frontmatter.title,
+			date: new Date(post.frontmatter.date),
+			description: post.frontmatter.description,
+			draft: post.frontmatter.draft ?? false,
+		};
+	})
+	.filter((post) => !post.draft)
+	.sort((a, b) => b.date - a.date);
+---
+
+<div class="flex flex-row items-center justify-between">
+  <H2Title><a href="/journal">{title}</a></H2Title>
+  <Link href="/journal" class="mb-4 md:mb-8 text-sm md:text-base"
+    >View all posts →</Link
+  >
+</div>
+
+<ul class="mb-4">
+  {posts.map((post) => <BlogPostExcerpt variant="home" post={post} />)}
+</ul>

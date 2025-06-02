@@ -1,0 +1,18 @@
+---
+import Link from "./Link.astro";
+
+const { post } = Astro.props;
+---
+
+<li class="flex flex-col md:flex-row gap-4 md:gap-8 mb-4">
+    <div>
+        <p class="font-medium text-xl/6 md:text-2xl/8 mb-2"><Link href={`/journal/${post.slug}`}>{post.title}</Link></p>
+        <small class="block text-xs md:text-sm text-gray-500 pb-2">{new Date(post.date).toLocaleDateString('en-GB', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        })}</small>
+        <p class="text-base md:text-lg mb-2">{post.description}</p>
+        <p class="font-medium text-sm md:text-base"><Link href={`/journal/${post.slug}`}>Read more →</Link></p>
+    </div>
+</li>

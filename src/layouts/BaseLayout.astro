@@ -1,0 +1,65 @@
+---
+const { title, slug } = Astro.props;
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import OpenToUSJobs from "../components/OpenToUSJobs.astro";
+import "../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{title ? title + " — Den Odell" : "Den Odell"}</title>
+    <meta property="og:site_name" content="Den Odell" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Den Odell",
+        "url": "https://denodell.com/"
+      }
+    </script>
+    <link rel="preconnect" href="https://www.google-analytics.com/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      onload="this.onload=null;this.rel='stylesheet';this.removeAttribute('as')"
+      as="style"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      />
+    </noscript>
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Den Odell — Blog"
+      href={new URL("rss.xml", Astro.site)}
+    />
+    <script
+      defer
+      data-domain="denodell.com"
+      src="https://plausible.io/js/script.js"></script>
+  </head>
+
+  <body
+    class="m-0 mx-auto w-screen max-w-none min-h-svh flex flex-col justify-between bg-background color-black font-light text-xl/8"
+  >
+    <Header slug={slug} />
+
+    <main
+      class="flex-1 font-mono"
+    >
+      <OpenToUSJobs />
+      
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>

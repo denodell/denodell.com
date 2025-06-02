@@ -1,0 +1,38 @@
+---
+import ContentWrapper from "./ContentWrapper.astro";
+---
+
+<div class="bg-gray-100 w-full py-8">
+  <ContentWrapper>
+    <div class="flex flex-col w-fit mx-auto text-center items-center">
+      <h2 class="font-sans font-bold text-xl/6 md:text-2xl mb-0">
+        Subscribe for sharp takes on frontend&nbsp;craft.
+      </h2>
+      <p class="text-base md:text-xl">
+        No noise. Just occasional emails on what&nbsp;matters.
+      </p>
+      <form
+        class="flex flex-col gap-2 mt-4"
+        action="https://buttondown.com/api/emails/embed-subscribe/denodell"
+        method="post"
+        target="popupwindow"
+        onsubmit="window.open('https://buttondown.com/denodell', 'popupwindow')"
+        class="embeddable-buttondown-form"
+      >
+        <span class="flex flex-row gap-2">
+          <input
+            class="border-solid border-1 text-base md:text-xl p-2"
+            type="email"
+            name="email"
+            placeholder="Email address"
+          />
+          <input
+            class="rounded-lg font-medium tracking-tight text-base md:text-lg p-4 md:p-6 py-2 md:py-3 border-1 border-solid border-black bg-black text-white cursor-pointer"
+            type="submit"
+            value="Subscribe"
+          />
+        </span>
+      </form>
+    </div>
+  </ContentWrapper>
+</div>

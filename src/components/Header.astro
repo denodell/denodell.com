@@ -1,0 +1,44 @@
+---
+import Logo from "./Logo.astro";
+import NavLink from "./NavLink.astro";
+import NavLinkIcon from "./NavLinkIcon.astro";
+
+const { slug } = Astro.props;
+---
+
+<header
+  class="sticky top-0 z-1 flex w-screen bg-background gap-5 border-b-1 border-b-gray-200"
+>
+  <div class="w-full max-w-5xl m-0 mx-auto">
+    <div
+      class="flex justify-between content-center w-full p-3 md:p-5 py-1 md:py-2"
+    >
+      <div class="flex items-center gap-3 md:gap-7">
+        <Logo />
+
+        <nav class="flex items-center gap-1 md:gap-5 font-sans font-medium">
+          <NavLink slug="journal" currentSlug={slug}>Journal</NavLink>
+          <NavLink slug="work" currentSlug={slug}>Work</NavLink>
+          <NavLink slug="books" currentSlug={slug}>Books</NavLink>
+          <NavLink slug="thought-leadership" currentSlug={slug}>About</NavLink>
+          <NavLink slug="thought-leadership" currentSlug={slug}>Contact</NavLink>
+        </nav>
+      </div>
+
+      <div class="flex gap-2 items-center">
+        <NavLinkIcon
+          name="LinkedIn"
+          url="https://www.linkedin.com/in/denodell"
+          src="/images/icons/linked-in.png"
+          darkSrc="/images/icons/linked-in-inverse.png"
+        />
+        <NavLinkIcon
+          name="GitHub"
+          url="https://www.github.com/denodell"
+          src="/images/icons/github.svg"
+          darkSrc="/images/icons/github-inverse.svg"
+        />
+      </div>
+    </div>
+  </div>
+</header>

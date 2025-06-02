@@ -1,0 +1,19 @@
+---
+import ContentWrapper from "../components/ContentWrapper.astro";
+import ImageBlock from "../components/ImageBlock.astro";
+import Title from "../components/Title.astro";
+import { Content, frontmatter } from "../content/work.md";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Technologist" slug="work">
+  <ContentWrapper>
+    <Title>Work</Title>
+
+    <ImageBlock image="/images/den-odell.jpg" content={frontmatter.intro} />
+
+    <div class="prose prose-p:font-mono text-base md:text-xl/8 max-w-none">
+      <Content />
+    </div>
+  </ContentWrapper>
+</BaseLayout>

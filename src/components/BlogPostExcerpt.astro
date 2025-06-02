@@ -1,0 +1,34 @@
+---
+import Link from "./Link.astro";
+
+const { post, variant } = Astro.props;
+---
+
+<li class="flex flex-col md:flex-row gap-4 md:gap-8 mb-8 md:mb-16">
+  <a
+    href={`/journal/${post.slug}`}
+    class:list={[
+      `md:w-64 mb-0 bg-center bg-cover bg-[url('/images/journal/${post.slug}.avif')]`,
+      variant === "home" ? "h-24" : "h-32",
+    ]}></a>
+  <div>
+    <Link
+      href={`/journal/${post.slug}`}
+      class="block font-medium text-xl/6 md:text-3xl/8 tracking-tight mb-2"
+      >{post.title}</Link
+    >
+    <small class="block text-xs md:text-sm text-gray-500 mb-2 md:mb-4"
+      >{
+        new Date(post.date).toLocaleDateString("en-GB", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })
+      }</small
+    >
+    <p class="text-base md:text-lg mb-2 md:mb-4">{post.description}</p>
+    <p class="font-medium text-sm md:text-base">
+      <Link href={`/journal/${post.slug}`}>Read more →</Link>
+    </p>
+  </div>
+</li>

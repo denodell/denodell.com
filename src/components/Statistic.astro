@@ -1,0 +1,13 @@
+---
+const { number, text, source, sourceLink } = Astro.props;
+const target = text?.toLowerCase().startsWith("http") ? "_blank" : "_self";
+---
+
+<p class="flex flex-col">
+    <span class="text-5xl md:text-7xl font-medium tracking-tighter">{number}</span>
+    <span class="text-base md:text-lg">{text}</span>
+    
+    <small class="block text-sm">
+        Source: <a class="underline underline-offset-4 decoration-2 decoartion-solid decoration-gray-300 hover:decoration-black transition" href={sourceLink} target={target} rel="noopener">{source}</a>
+    </small>
+</p>
