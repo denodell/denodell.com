@@ -2,10 +2,13 @@
 	"name": "denodell.com",
 	"version": "1.0.0",
 	"type": "module",
+	"homepage": "https://denodell.github.io/denodell.com",
 	"scripts": {
 		"dev": "astro dev",
 		"build": "astro build",
-		"preview": "astro preview"
+		"preview": "astro preview",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d dist"
 	},
 	"dependencies": {
 		"@astrojs/rss": "^4.0.11",
@@ -17,6 +20,7 @@
 	"devDependencies": {
 		"@tailwindcss/typography": "^0.5.16",
 		"autoprefixer": "^10.4.21",
+		"gh-pages": "^6.3.0",
 		"postcss": "^8.5.3",
 		"tailwindcss": "^4.1.8"
 	}
