@@ -41,9 +41,7 @@ const { frontmatter, default: Content } = postEntry[1];
   <ContentWrapper class="md:py-0">
     <article class="relative">
       <div
-        class={"w-auto max-w-none -mx-24 h-72 md:h-128 bg-[url('/images/journal/" +
-          slug +
-          ".avif')] bg-cover bg-center"}
+        class={`w-auto max-w-none -mx-24 h-72 md:h-128 bg-[url('/images/journal/${slug}.avif')] bg-cover bg-center`}
       >
       </div>
 
@@ -66,10 +64,27 @@ const { frontmatter, default: Content } = postEntry[1];
       </p>
 
       <div
-        class="prose prose-xl prose-hr:border-t-gray-300 prose-hr:w-[100px] prose-hr:my-8 md:prose-hr:my-12 prose-h2:font-sans prose-h2:text-xl md:prose-h2:text-3xl prose-p:text-base/7 md:prose-p:text-2xl/10 prose-p:text-black prose-li:text-black prose-ul:ps-4 prose-li:text-sm/7 md:prose-li:text-2xl/10 max-w-none"
+        class="prose
+          prose-xl
+          prose-hr:border-t-gray-300
+          prose-hr:w-[100px]
+          prose-hr:my-8
+          md:prose-hr:my-12
+          prose-h2:font-sans
+          prose-h2:text-xl
+          md:prose-h2:text-3xl
+          prose-p:text-base/7
+          md:prose-p:text-2xl/10
+          prose-p:font-normal
+          prose-li:text-black
+          prose-li:font-normal
+          prose-ul:ps-4
+          prose-li:text-base/7
+          md:prose-li:text-2xl/10
+          max-w-none"
       >
         <Content />
-        <hr>
+        <hr />
       </div>
 
       <p class="text-sm md:text-xl">
