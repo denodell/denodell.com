@@ -22,19 +22,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           >
           </div>
 
-          <h1
-            class="mb-1 text-6xl md:text-8xl font-bold tracking-tighter"
-          >
+          <h1 class="mb-1 text-6xl md:text-8xl font-bold tracking-tighter">
             Den Odell
           </h1>
 
-          <small class="uppercase text-xs md:text-sm text-gray-600 mb-8 md:mb-12">Frontend Architect · Author · Developer</small>
-
+          <small
+            class="uppercase text-xs md:text-sm text-gray-600 mb-8 md:mb-12"
+            >Frontend Architect · Author · Developer</small
+          >
 
           <p
             class="max-w-md text-3xl md:text-5xl mb-12 md:mb-16 font-medium tracking-tight"
           >
-            Built frontends used&nbsp;by&nbsp;millions. Wrote the books that teach others&nbsp;how.
+            Built frontends used&nbsp;by&nbsp;millions. Wrote the books that
+            teach others&nbsp;how.
           </p>
 
           <div class="flex flex-row gap-4">
@@ -42,9 +43,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <Cta href="/journal" inverse>Journal</Cta>
           </div>
         </div>
-        <div
-          class="hidden md:block w-1/3 rounded-xl bg-[url('/images/denodell.jpg')] bg-cover bg-center"
-        >
+        <div class="hidden md:block w-1/3">
+          <div
+            class="rounded-xl bg-[url('/images/denodell.jpg')] bg-cover bg-center w-full h-93"
+          >
+          </div>
         </div>
       </div>
     </ContentWrapper>
@@ -65,7 +68,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="md:w-1/3">
         <div class="flex flex-row items-center justify-between">
           <H2Title><a href="/books">Books</a></H2Title>
-          <Link href="/books" class="mb-4 md:mb-8 text-sm md:text-base">View all →</Link>
+          <Link href="/books" class="mb-4 md:mb-8 text-sm md:text-base"
+            >View all →</Link
+          >
         </div>
 
         <div class="flex flex-row gap-4 mb-8 w-2/3 md:w-1/2 md:w-full">
@@ -83,7 +88,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               alt="Pro JavaScript RIA Techniques book cover"
             /></a
           >
-        </div>        
+        </div>
       </div>
     </div>
   </ContentWrapper>
