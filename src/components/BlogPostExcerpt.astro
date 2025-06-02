@@ -8,9 +8,11 @@ const { post, variant } = Astro.props;
   <a
     href={`/blog/${post.slug}`}
     class:list={[
-      `md:w-64 mb-0 bg-center bg-cover bg-[url('/images/blog/${post.slug}.avif')]`,
+      `md:w-64 mb-0 bg-center bg-cover`,
       variant === "home" ? "h-24" : "h-32",
-    ]} aria-label={post.title}></a>
+    ]}
+    style={`background-image: url('/images/blog/${post.slug}.avif')`}
+    aria-label={post.title}></a>
   <div>
     <Link
       href={`/blog/${post.slug}`}
