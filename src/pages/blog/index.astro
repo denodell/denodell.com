@@ -6,13 +6,13 @@ import NewsletterSignup from "../../components/NewsletterSignup.astro";
 import Title from "../../components/Title.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
-const allPosts = import.meta.glob("../../content/journal/*.md", {
+const allPosts = import.meta.glob("../../content/blog/*.md", {
 	eager: true,
 });
 
 const posts = Object.entries(allPosts)
 	.map(([path, post]) => {
-		const slug = path.split("/journal/")[1].replace(".md", "");
+		const slug = path.split("/blog/")[1].replace(".md", "");
 		return {
 			slug,
 			title: post.frontmatter.title,
@@ -25,7 +25,7 @@ const posts = Object.entries(allPosts)
 	.sort((a, b) => b.date - a.date);
 ---
 
-<BaseLayout title="Writing" slug="journal">
+<BaseLayout title="Writing" slug="blog">
   <ContentWrapper>
     <Title>Journal</Title>
 

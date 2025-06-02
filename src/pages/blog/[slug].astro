@@ -7,12 +7,12 @@ import NewsletterSignup from "../../components/NewsletterSignup.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
-	const allPosts = import.meta.glob("../../content/journal/*.md", {
+	const allPosts = import.meta.glob("../../content/blog/*.md", {
 		eager: true,
 	});
 
 	return Object.keys(allPosts).map((filePath) => {
-		const slug = filePath.split("/journal/")[1].replace(".md", "");
+		const slug = filePath.split("/blog/")[1].replace(".md", "");
 
 		return {
 			params: { slug },
@@ -22,7 +22,7 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params;
 
-const allPosts = import.meta.glob("../../content/journal/*.md", {
+const allPosts = import.meta.glob("../../content/blog/*.md", {
 	eager: true,
 });
 
@@ -37,11 +37,11 @@ if (!postEntry) {
 const { frontmatter, default: Content } = postEntry[1];
 ---
 
-<BaseLayout title={frontmatter.title} slug="journal">
+<BaseLayout title={frontmatter.title} slug="blog">
   <ContentWrapper class="md:py-0">
     <article class="relative">
       <div
-        class={`w-auto max-w-none -mx-24 h-72 md:h-128 bg-[url('/images/journal/${slug}.avif')] bg-cover bg-center`}
+        class={`w-auto max-w-none -mx-24 h-72 md:h-128 bg-[url('/images/blog/${slug}.avif')] bg-cover bg-center`}
       >
       </div>
 
@@ -86,17 +86,17 @@ const { frontmatter, default: Content } = postEntry[1];
 
       <p class="text-sm md:text-xl">
         <span class="font-medium">Share</span>: <Link
-          href={`https://x.com/intent/tweet?url=https://denodell.com/journal/${slug}`}
+          href={`https://x.com/intent/tweet?url=https://denodell.com/blog/${slug}`}
           >Twitter / X</Link
         > · <Link
-          href={`https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://denodell.com/journal/${slug}`}
+          href={`https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://denodell.com/blog/${slug}`}
           >LinkedIn</Link
         > · <CopyLink />
       </p>
 
       <div class="mt-16 mb-8 bg-background text-sm md:text-xl">
         <a
-          href="/journal/"
+          href="/blog/"
           class="underline underline-offset-4 decoration-2 decoartion-solid decoration-gray-300 hover:decoration-black transition"
           >← View all posts</a
         >

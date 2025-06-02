@@ -6,14 +6,14 @@ const { post, variant } = Astro.props;
 
 <li class="flex flex-col md:flex-row gap-4 md:gap-8 mb-8 md:mb-16">
   <a
-    href={`/journal/${post.slug}`}
+    href={`/blog/${post.slug}`}
     class:list={[
-      `md:w-64 mb-0 bg-center bg-cover bg-[url('/images/journal/${post.slug}.avif')]`,
+      `md:w-64 mb-0 bg-center bg-cover bg-[url('/images/blog/${post.slug}.avif')]`,
       variant === "home" ? "h-24" : "h-32",
     ]} aria-label={post.title}></a>
   <div>
     <Link
-      href={`/journal/${post.slug}`}
+      href={`/blog/${post.slug}`}
       class="block font-sans font-bold text-xl/6 md:text-3xl/8 tracking-tight mb-2"
       >{post.title}</Link
     >
@@ -28,7 +28,7 @@ const { post, variant } = Astro.props;
     >
     <p class="text-base md:text-lg mb-2 md:mb-4">{post.description}</p>
     <p class="font-medium text-sm md:text-base">
-      <Link href={`/journal/${post.slug}`}>Read more →</Link>
+      <Link href={`/blog/${post.slug}`}>Read more →</Link>
     </p>
   </div>
 </li>

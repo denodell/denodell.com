@@ -5,14 +5,14 @@ import H2Title from "./H2Title.astro";
 import Link from "./Link.astro";
 const { title, variant } = Astro.props;
 
-const allPosts = import.meta.glob("../content/journal/*.md", {
+const allPosts = import.meta.glob("../content/blog/*.md", {
 	eager: true,
 });
 
 const posts = Object.entries(allPosts)
 	.slice(0, 3) // Limit to the latest 3 posts
 	.map(([path, post]) => {
-		const slug = path.split("/journal/")[1].replace(".md", "");
+		const slug = path.split("/blog/")[1].replace(".md", "");
 		return {
 			slug,
 			title: post.frontmatter.title,
@@ -26,8 +26,8 @@ const posts = Object.entries(allPosts)
 ---
 
 <div class="flex flex-row items-center justify-between">
-  <H2Title><a href="/journal">{title}</a></H2Title>
-  <Link href="/journal" class="mb-4 md:mb-8 text-sm md:text-base"
+  <H2Title><a href="/blog">{title}</a></H2Title>
+  <Link href="/blog" class="mb-4 md:mb-8 text-sm md:text-base"
     >View all posts →</Link
   >
 </div>

@@ -1,16 +1,16 @@
 ---
 title: "Want to Be a Better Frontend Engineer? Try a Week On-Call"
 description: "You’re going to hate me for saying this, but I actually like being on-call. Honestly! It’s taught me more about frontend quality than any bug tracker ever did."
-date: 2025-06-03
+date: 2025-06-04
 author: "Den Odell"
 readingTime: 3 min
 tags: ["frontend", "engineering", "on-call", "quality", "career"]
-slug: "on-call-for-frontend-engineers"
+slug: try-a-week-on-call
 ---
 
 **You’re going to hate me for saying this, but I actually like being on-call.**  
-I know. _I know._ But hear me out.   
-Obviously not the part where PagerDuty yanks you out of a dream with your heart pounding.
+I know. _I know._ But hear me out.  
+Obviously not the part where PagerDuty yanks you out of a dream with your heart pounding.  
 But on-call taught me more about frontend quality than any bug tracker ever did.
 
 ***

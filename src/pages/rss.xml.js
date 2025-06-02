@@ -1,42 +1,25 @@
-import fs from "node:fs";
-import path from "node:path";
+import { getCollection } from "astro:content";
 import rss from "@astrojs/rss";
-import matter from "gray-matter";
+import MarkdownIt from "markdown-it";
+import sanitizeHtml from "sanitize-html";
+const parser = new MarkdownIt();
 
-export async function getStaticPaths() {
-	const blogDir = path.join(process.cwd(), "src/content/blog");
-	const files = fs.readdirSync(blogDir);
-
-	const posts = files
-		.filter((file) => file.endsWith(".md"))
-		.map((file) => {
-			const slug = file.replace(/\.md$/, "");
-			const filePath = path.join(blogDir, file);
-			const fileContent = fs.readFileSync(filePath, "utf-8");
-			const { data, content } = matter(fileContent);
-
-			return {
-				title: data.title,
-				pubDate: new Date(data.date),
-				description: data.description,
-				link: `/blog/${slug}`,
-				content: content,
-				canonicalUrl: data.canonical_url,
-			};
-		});
-
+export async function GET(context) {
+	const blog = await getCollection("blog");
 	return rss({
-		title: "Den Odell’s Blog",
-		description: "Performance, architecture, and lessons from the real world.",
-		site: "https://denodell.com",
-		items: posts.map((post) => ({
-			title: post.title,
-			pubDate: post.pubDate,
-			description: post.description,
-			link: post.canonicalUrl || `https://denodell.com${post.link}`,
-			content: post.content,
-			guid: post.canonicalUrl || `https://denodell.com${post.link}`,
+		title: "Den Odell’s Journal",
+		description:
+			"Thoughts on building fast, accessible, and resilient frontends — drawn from years of real-world experience, a couple of books, and a lot of hard lessons. Expect deep dives, practical tips, a bit of history, and the occasional opinionated take on where the web is going.",
+		site: context.site,
+		items: blog.map((post) => ({
+			title: post.data.title,
+			pubDate: post.data.date,
+			description: post.data.description,
+			link: `/blog/${post.id}/`,
+			content: sanitizeHtml(parser.render(post.body), {
+				allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
+			}),
 		})),
-		customData: `<language>en</language>`,
+		trailingSlash: false,
 	});
 }
