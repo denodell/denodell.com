@@ -7,4 +7,4 @@ Reach out via [contact@denodell.com](mailto:contact@denodell.com) or
 ***
 
 **👋 Just Saying Hi?**  
-Feel free to drop a note on [Twitter / X](https://twitter.com/denodell), [Mastodon](https://mastodon.social), [Bluesky](https://bsky.app/profile/denodell.bsky.social), [GitHub](https://github.com/denodell), or use the email above.
+Feel free to drop a note on [Twitter / X](https://twitter.com/denodell), [Mastodon](https://mastodon.social/@denodell), [Bluesky](https://bsky.app/profile/denodell.bsky.social), [GitHub](https://github.com/denodell), or use the email above.

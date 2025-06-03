@@ -3,7 +3,7 @@ title: "Want to Be a Better Frontend Engineer? Try a Week On-Call"
 description: "You’re going to hate me for saying this, but I actually like being on-call. Honestly! It’s taught me more about frontend quality than any bug tracker ever did."
 date: 2025-06-04T13:00:00Z
 author: "Den Odell"
-readingTime: "3 min"
+readingTime: "2 min"
 image: "try-a-week-on-call.avif"
 tags: ["frontend", "engineering", "oncall", "codequality"]
 slug: try-a-week-on-call
