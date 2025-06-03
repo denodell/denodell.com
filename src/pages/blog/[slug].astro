@@ -37,7 +37,7 @@ if (!postEntry) {
 const { frontmatter, default: Content } = postEntry[1];
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description} shortTitle={frontmatter.shortTitle} shortDescription={frontmatter.shortDescription} id={frontmatter.slug} type="article" slug="blog">
+<BaseLayout title={frontmatter.title} description={frontmatter.description} date={frontmatter.date} id={frontmatter.slug} type="article" slug="blog">
   <ContentWrapper class="-mt-8 md:-mt-12">
     <article class="relative">
       <div

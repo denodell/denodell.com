@@ -1,6 +1,5 @@
 ---
-const { id, title, description, slug, shortTitle, shortDescription, type } =
-	Astro.props;
+const { id, title, description, slug, date, type } = Astro.props;
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import OpenToUSJobs from "../components/OpenToUSJobs.astro";
@@ -18,7 +17,9 @@ import "../styles/global.css";
 
     <meta property="og:type" content={type ?? "website"}>
     <meta property="og:title" content={title}>
-    <meta property="og:description" content={shortDescription ?? description}>
+    <meta property="og:description" content={description}>
+    {type === 'article' ? <meta property="article:author" content="Den Odell"> : null}
+    {type === 'article' && date ? <meta property="article:published_time" content={date}> : null}
     {type === 'article' ? <meta property="og:url" content={`https://denodell.com/blog/${id}`}> : null}
     {type === 'article' ? <meta property="og:image" content={`https://denodell.com/images/blog/${id}.png`}> : null}
     <meta name="twitter:card" content="summary_large_image">
