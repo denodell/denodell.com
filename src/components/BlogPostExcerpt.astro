@@ -13,7 +13,7 @@ const { post, variant } = Astro.props;
     ]}
     style={`background-image: url('/images/blog/${post.slug}.avif')`}
     aria-label={post.title}></a>
-  <div class="w-3/4">
+  <div class="md:w-3/4">
     <Link
       href={`/blog/${post.slug}`}
       class="block font-sans font-bold text-xl/6 md:text-3xl/8 tracking-tight mb-2"
