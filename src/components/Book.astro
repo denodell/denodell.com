@@ -1,5 +1,6 @@
 ---
 import Cta from "./Cta.astro";
+import Link from "./Link.astro";
 const { title, description, publishedBy, href, image, alt, linkText } =
 	Astro.props;
 const target = href.startsWith("http") ? "_blank" : "_self";
@@ -17,7 +18,7 @@ const target = href.startsWith("http") ? "_blank" : "_self";
       <h3
         class="md:mb-2 font-sans font-bold text-base md:text-3xl tracking-tight"
       >
-        {title}
+        <Link href={href} target={target}>{title}</Link>
       </h3>
       <p class="text-base md:text-xl/8 mb-6">
         {description}<br />

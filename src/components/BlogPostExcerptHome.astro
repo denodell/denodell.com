@@ -12,7 +12,7 @@ const { post } = Astro.props;
         month: 'long',
         day: 'numeric',
         })}</small>
-        <p class="text-base md:text-lg mb-2">{post.description}</p>
+        <p class="text-base md:text-xl mb-2">{post.description}</p>
         <p class="font-medium text-sm md:text-base"><Link href={`/blog/${post.slug}`}>Read more →</Link></p>
     </div>
 </li>
