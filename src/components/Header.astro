@@ -11,17 +11,17 @@ const { slug } = Astro.props;
 >
   <div class="w-full max-w-5xl m-0 mx-auto">
     <div
-      class="flex justify-between content-center w-full p-3 md:p-5 py-1 md:py-2"
+      class="flex justify-between content-center w-full p-3 md:p-5 md:py-3"
     >
       <div class="flex items-center gap-2 md:gap-7">
         <Logo />
 
         <nav class="flex items-center gap-0 md:gap-5 font-sans font-medium">
           <NavLink slug="blog" currentSlug={slug}>Journal</NavLink>
-          <NavLink slug="work" currentSlug={slug}>Work</NavLink>
+<!--          <NavLink slug="work" currentSlug={slug}>Work</NavLink> -->
           <NavLink slug="books" currentSlug={slug}>Books</NavLink>
-          <NavLink slug="thought-leadership" currentSlug={slug}>About</NavLink>
-          <NavLink slug="thought-leadership" currentSlug={slug}>Contact</NavLink>
+          <!-- <NavLink slug="thought-leadership" currentSlug={slug}>About</NavLink> -->
+          <NavLink slug="contact" currentSlug={slug}>Contact</NavLink>
         </nav>
       </div>
 

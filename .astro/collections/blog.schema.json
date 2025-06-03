@@ -32,13 +32,28 @@
         "readingTime": {
           "type": "string"
         },
+        "image": {
+          "type": "string"
+        },
         "tags": {
           "type": "array",
           "items": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^[a-z]+$",
+            "errorMessage": {
+              "pattern": "Tags must contain only lowercase a–z letters with no spaces or symbols."
+            }
+          },
+          "minItems": 1,
+          "maxItems": 4,
+          "errorMessage": {
+            "maxItems": "You can use up to 4 tags only."
           }
         },
         "slug": {
+          "type": "string"
+        },
+        "devToSlug": {
           "type": "string"
         },
         "relatedPosts": {
@@ -93,6 +108,7 @@
         "date",
         "author",
         "readingTime",
+        "image",
         "tags",
         "slug"
       ],

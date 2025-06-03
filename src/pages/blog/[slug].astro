@@ -38,7 +38,7 @@ const { frontmatter, default: Content } = postEntry[1];
 ---
 
 <BaseLayout title={frontmatter.title} slug="blog">
-  <ContentWrapper class="md:py-0">
+  <ContentWrapper class="-mt-8 md:-mt-12">
     <article class="relative">
       <div
         class={`w-auto max-w-none -mx-24 h-72 md:h-128 bg-cover bg-center`}
@@ -85,7 +85,14 @@ const { frontmatter, default: Content } = postEntry[1];
         <hr />
       </div>
 
+      <p class="text-sm md:text-xl pb-4">
+        💬
+        <span class="font-medium">Comments?</span>
+        <Link href={`https://dev.to/denodell/${frontmatter.devToSlug}#comments`}>Join the discussion on Dev.to →</Link>
+        </p>
+
       <p class="text-sm md:text-xl">
+        🔗
         <span class="font-medium">Share</span>: <Link
           href={`https://x.com/intent/tweet?url=https://denodell.com/blog/${slug}`}
           >Twitter / X</Link
@@ -95,19 +102,15 @@ const { frontmatter, default: Content } = postEntry[1];
         > · <CopyLink />
       </p>
 
-      <div class="mt-16 mb-8 bg-background text-sm md:text-xl">
-        <a
-          href="/blog/"
-          class="underline underline-offset-4 decoration-2 decoartion-solid decoration-gray-300 hover:decoration-black transition"
-          >← View all posts</a
-        >
-      </div>
 
-      <!-- 
+        <!-- 
     <DevToMeta slug={slug} />
     -->
+      </p>
     </article>
+
   </ContentWrapper>
 
-  <NewsletterSignup />
+
+    <NewsletterSignup />
 </BaseLayout>

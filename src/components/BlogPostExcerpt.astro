@@ -4,7 +4,7 @@ import Link from "./Link.astro";
 const { post, variant } = Astro.props;
 ---
 
-<li class="flex flex-col md:flex-row gap-4 md:gap-8 mb-8 md:mb-16">
+<li class="flex flex-col md:flex-row gap-4 md:gap-8">
   <a
     href={`/blog/${post.slug}`}
     class:list={[

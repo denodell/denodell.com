@@ -1,2 +1,2 @@
 **👋 Hi, I’m Den Odell, a frontend architect and author.**   
-I’ve led architecture for a number of global brands, written two JavaScript books used in university courses, and now focus on tools and practices that make speed and accessibility the default.
+I’ve led development for a number of global brands, written two JavaScript books used in university courses, and now focus on tools and practices that make speed and accessibility the default.

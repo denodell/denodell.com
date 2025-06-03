@@ -32,6 +32,6 @@ const posts = Object.entries(allPosts)
   >
 </div>
 
-<ul class="mb-4">
+<ul class="mb-4 gap-4 md:gap-8 list-none">
   {posts.map((post) => <BlogPostExcerpt variant="home" post={post} />)}
 </ul>

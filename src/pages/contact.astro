@@ -1,0 +1,19 @@
+---
+import ContentWrapper from "../components/ContentWrapper.astro";
+import NewsletterSignupHome from "../components/NewsletterSignupHome.astro";
+import Title from "../components/Title.astro";
+import { Content } from "../content/contact.md";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Contact" slug="contact">
+  <ContentWrapper>
+    <Title>Contact</Title><div
+      class="prose prose-p:font-mono text-base md:text-xl/8 max-w-none"
+    >
+      <Content />
+    </div></ContentWrapper
+  >
+  <NewsletterSignupHome />
+  </BaseLayout
+>
