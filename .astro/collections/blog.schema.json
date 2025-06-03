@@ -12,9 +12,10 @@
         },
         "shortDescription": {
           "type": "string",
+          "minLength": 100,
           "maxLength": 160,
           "errorMessage": {
-            "maxLength": "Short description must be 160 characters or less."
+            "maxLength": "Short description must be between 100 and 160 characters long."
           }
         },
         "date": {
