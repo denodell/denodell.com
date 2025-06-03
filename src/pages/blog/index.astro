@@ -1,4 +1,5 @@
 ---
+import { getCollection } from "astro:content";
 import BlogPostExcerpt from "../../components/BlogPostExcerpt.astro";
 import ContentWrapper from "../../components/ContentWrapper.astro";
 import H2Title from "../../components/H2Title.astro";
@@ -6,23 +7,13 @@ import NewsletterSignup from "../../components/NewsletterSignup.astro";
 import Title from "../../components/Title.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
-const allPosts = import.meta.glob("../../content/blog/*.md", {
-	eager: true,
-});
-
-const posts = Object.entries(allPosts)
-	.map(([path, post]) => {
-		const slug = path.split("/blog/")[1].replace(".md", "");
-		return {
-			slug,
-			title: post.frontmatter.title,
-			date: new Date(post.frontmatter.date),
-			description: post.frontmatter.description,
-			draft: post.frontmatter.draft ?? false,
-		};
+const posts = (
+	await getCollection("blog", ({ data }) => {
+		return data.draft !== true;
 	})
-	.filter((post) => !post.draft)
-	.sort((a, b) => b.date - a.date);
+).sort((a, b) => {
+	return new Date(b.data.date) - new Date(a.data.date);
+});
 ---
 
 <BaseLayout title="Journal" slug="blog">
@@ -40,8 +31,8 @@ const posts = Object.entries(allPosts)
 
     <ul>
       {posts.map((post) => <BlogPostExcerpt post={post} />)}
-    </ul></ContentWrapper
-  >
+    </ul>
+  </ContentWrapper>
 
   <NewsletterSignup />
 </BaseLayout>

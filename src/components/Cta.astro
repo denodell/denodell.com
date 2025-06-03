@@ -5,7 +5,7 @@ const target = href?.startsWith("http") ? "_blank" : "_self";
 
 <a
   class:list={[
-    "rounded-lg font-medium tracking-tight text-base md:text-lg p-4 md:p-6 py-2 md:py-3 border-1 border-solid border-black",
+    "w-fit rounded-lg font-medium tracking-tight text-base md:text-lg p-4 md:p-6 py-2 md:py-3 border-1 border-solid border-black",
     inverse ? "" : "bg-black text-white"
   ]}
   href={href} target={target}><slot /></a

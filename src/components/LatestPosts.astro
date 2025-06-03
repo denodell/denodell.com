@@ -1,28 +1,18 @@
 ---
+import { getCollection } from "astro:content";
 import BlogPostExcerpt from "./BlogPostExcerpt.astro";
 import BlogPostExcerptHome from "./BlogPostExcerptHome.astro";
 import H2Title from "./H2Title.astro";
 import Link from "./Link.astro";
 const { title, variant } = Astro.props;
 
-const allPosts = import.meta.glob("../content/blog/*.md", {
-	eager: true,
-});
-
-const posts = Object.entries(allPosts)
-	.slice(0, 3) // Limit to the latest 3 posts
-	.map(([path, post]) => {
-		const slug = path.split("/blog/")[1].replace(".md", "");
-		return {
-			slug,
-			title: post.frontmatter.title,
-			date: new Date(post.frontmatter.date),
-			description: post.frontmatter.description,
-			draft: post.frontmatter.draft ?? false,
-		};
+const posts = (
+	await getCollection("blog", ({ data }) => {
+		return data.draft !== true;
 	})
-	.filter((post) => !post.draft)
-	.sort((a, b) => b.date - a.date);
+).sort((a, b) => {
+	return new Date(b.data.date) - new Date(a.data.date);
+});
 ---
 
 <div class="flex flex-row items-center justify-between">
@@ -33,5 +23,5 @@ const posts = Object.entries(allPosts)
 </div>
 
 <ul class="mb-4 gap-4 md:gap-8 list-none">
-  {posts.map((post) => <BlogPostExcerpt variant="home" post={post} />)}
+  {posts.slice(0, 3).map((post) => <BlogPostExcerpt variant="home" post={post} />)}
 </ul>

@@ -26,25 +26,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     <H2Title>My Books</H2Title>
 
-    <div class="flex flex-col gap-8">
-    <Book
-      title="Pro JavaScript Development"
-      description="A practical guide to writing disciplined, production-grade JavaScript."
-      publishedBy="Published by Apress, 2014"
-      href="/books/pro-javascript-development"
-      image="/images/pro-javascript-development.jpg"
-      alt="Pro JavaScript Development book cover"
-    />
+    <div class="flex flex-col md:flex-row gap-8">
+      <Book
+        title="Pro JavaScript Development"
+        description="A practical guide to writing disciplined, production-grade JavaScript."
+        publishedBy="Published by Apress, 2014"
+        href="/books/pro-javascript-development"
+        image="/images/pro-javascript-development.jpg"
+        alt="Pro JavaScript Development book cover"
+      />
 
-    <Book
-      title="Pro JavaScript RIA Techniques"
-      description="The foundations of dynamic UI, written in the early days of modern JavaScript."
-      publishedBy="Published by Apress, 2009"
-      href="/books/pro-javascript-ria-techniques"
-      image="/images/pro-javascript-ria-techniques.jpg"
-      alt="Pro JavaScript RIA Techniques book cover"
-    />
-  </div>
-
+      <Book
+        title="Pro JavaScript RIA Techniques"
+        description="The foundations of dynamic UI, written in the early days of modern JavaScript."
+        publishedBy="Published by Apress, 2009"
+        href="/books/pro-javascript-ria-techniques"
+        image="/images/pro-javascript-ria-techniques.jpg"
+        alt="Pro JavaScript RIA Techniques book cover"
+      />
+    </div>
   </ContentWrapper></BaseLayout
 >

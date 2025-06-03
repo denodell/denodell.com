@@ -10,4 +10,11 @@ export default defineConfig({
 	},
 	output: "static",
 	trailingSlash: "never",
+	experimental: {
+		responsiveImages: true,
+	},
+	image: {
+		experimentalLayout: "full-width",
+		experimentalDefaultStyles: false,
+	},
 });

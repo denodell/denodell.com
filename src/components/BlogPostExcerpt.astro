@@ -1,36 +1,32 @@
 ---
+import { Image, Picture } from "astro:assets";
 import Link from "./Link.astro";
-
 const { post, variant } = Astro.props;
 ---
-
 <li class="flex flex-col md:flex-row gap-4 md:gap-8">
   <a
-    href={`/blog/${post.slug}`}
-    class:list={[
-      `md:w-1/4 mb-0 bg-center bg-cover`,
-      variant === "home" ? "h-24" : "h-32",
-    ]}
-    style={`background-image: url('/images/blog/${post.slug}.avif')`}
-    aria-label={post.title}></a>
+    href={`/blog/${post.data.slug}`}
+    class="md:w-1/4 mb-0">
+    <Picture src={post.data.image} formats={['avif', 'webp']} style="height:225px" alt="" />
+  </a>
   <div class="md:w-3/4">
     <Link
-      href={`/blog/${post.slug}`}
+      href={`/blog/${post.data.slug}`}
       class="block font-sans font-bold text-xl/6 md:text-3xl/8 tracking-tight mb-2"
-      >{post.title}</Link
+      >{post.data.title}</Link
     >
     <small class="block text-xs md:text-sm text-gray-500 mb-2 md:mb-4"
       >{
-        new Date(post.date).toLocaleDateString("en-GB", {
+        new Date(post.data.date).toLocaleDateString("en-GB", {
           year: "numeric",
           month: "long",
           day: "numeric",
         })
       }</small
     >
-    <p class="text-base md:text-xl mb-2 md:mb-4">{post.description}</p>
+    <p class="text-base md:text-xl mb-2 md:mb-4">{post.data.description}</p>
     <p class="font-medium text-sm md:text-base">
-      <Link href={`/blog/${post.slug}`}>Read more →</Link>
+      <Link href={`/blog/${post.data.slug}`}>Read more →</Link>
     </p>
   </div>
 </li>

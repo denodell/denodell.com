@@ -4,7 +4,7 @@ description: "You’re going to hate me for saying this, but I actually like bei
 date: 2025-06-04T13:00:00Z
 author: "Den Odell"
 readingTime: "3 min"
-image: "try-a-week-on-call.avif"
+image: "./try-a-week-on-call.png"
 tags: ["frontend", "engineering", "oncall", "codequality"]
 slug: try-a-week-on-call
 devToSlug: want-to-be-a-better-frontend-engineer-try-a-week-on-call-40a5
