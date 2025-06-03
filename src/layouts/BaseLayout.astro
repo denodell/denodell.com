@@ -17,7 +17,7 @@ import "../styles/global.css";
       content={description ?? "Frontend Architect · Author · Developer. Built frontends used by millions. Wrote the books that teach others how."}>
 
     <meta property="og:type" content={type ?? "website"}>
-    <meta property="og:title" content={shortTitle ?? title}>
+    <meta property="og:title" content={title}>
     <meta property="og:description" content={shortDescription ?? description}>
     {type === 'article' ? <meta property="og:url" content={`https://denodell.com/blog/${id}`}> : null}
     {type === 'article' ? <meta property="og:image" content={`https://denodell.com/images/blog/${id}.png`}> : null}

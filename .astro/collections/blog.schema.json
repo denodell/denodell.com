@@ -10,6 +10,13 @@
         "description": {
           "type": "string"
         },
+        "shortDescription": {
+          "type": "string",
+          "maxLength": 160,
+          "errorMessage": {
+            "maxLength": "Short description must be 160 characters or less."
+          }
+        },
         "date": {
           "anyOf": [
             {
@@ -105,6 +112,7 @@
       "required": [
         "title",
         "description",
+        "shortDescription",
         "date",
         "author",
         "readingTime",

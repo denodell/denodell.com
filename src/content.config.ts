@@ -7,6 +7,9 @@ const blog = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
+		shortDescription: z.string().max(160, {
+			message: "Short description must be 160 characters or less.",
+		}),
 		date: z.date(),
 		author: z.string(),
 		readingTime: z.string(),
