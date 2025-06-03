@@ -5,6 +5,6 @@ const { name, url, src, darkSrc } = Astro.props;
 <a href={url} target="_blank" rel="noopener noreferrer">
     <picture class="block w-6 h-6 md:w-8 md:h-8">
         <!-- source srcset={darkSrc} media="(prefers-color-scheme: dark)"> -->
-        <img src={src} alt={`Connect on ${name}`} class="block" loading="lazy">
+        <img src={src} alt={`Connect on ${name}`} class="block" loading="eager">
     </picture>
 </a>

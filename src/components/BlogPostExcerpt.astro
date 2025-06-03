@@ -7,7 +7,7 @@ const { post } = Astro.props;
   <a
   class="block overflow-hidden rounded-t-xl md:rounded-t-2xl"
     href={`/blog/${post.data.slug}`}>
-    <Picture src={post.data.image} formats={['avif', 'webp']} style="height:260px" alt="" />
+    <Picture src={post.data.image} formats={['avif', 'webp']} style="height:260px" alt={post.data.imageAlt ?? ""} />
   </a>
   <div class="p-4 md:p-8 bg-gray-100 border-gray-300 border-1 rounded-b-xl md:rounded-b-2xl">
     <Link

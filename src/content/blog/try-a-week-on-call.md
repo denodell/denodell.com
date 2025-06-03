@@ -5,6 +5,7 @@ date: 2025-06-04T13:00:00Z
 author: "Den Odell"
 readingTime: "3 min"
 image: "./try-a-week-on-call.png"
+imageAlt: "Developer debugging an issue with an online checkout application at 2:43 AM"
 tags: ["frontend", "engineering", "oncall", "codequality"]
 slug: try-a-week-on-call
 devToSlug: want-to-be-a-better-frontend-engineer-try-a-week-on-call-40a5

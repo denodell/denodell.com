@@ -12,6 +12,7 @@ const blog = defineCollection({
 			author: z.string(),
 			readingTime: z.string(),
 			image: image(),
+			imageAlt: z.string(),
 			tags: z
 				.array(
 					z.string().regex(/^[a-z]+$/, {

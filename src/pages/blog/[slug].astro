@@ -39,7 +39,7 @@ if (!post) {
     src={post.data.image}
     formats={["avif", "webp"]}
     class="w-full max-w-7xl mx-auto h-96 max-h-[600px]"
-    alt=""
+    alt={post.data.imageAlt ?? ""}
   />
 
   <ContentWrapper class="-mt-8 md:-mt-12">

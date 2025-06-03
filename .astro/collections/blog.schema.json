@@ -35,6 +35,9 @@
         "image": {
           "type": "string"
         },
+        "imageAlt": {
+          "type": "string"
+        },
         "tags": {
           "type": "array",
           "items": {
@@ -109,6 +112,7 @@
         "author",
         "readingTime",
         "image",
+        "imageAlt",
         "tags",
         "slug"
       ],
