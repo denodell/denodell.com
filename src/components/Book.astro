@@ -1,0 +1,27 @@
+---
+import Cta from "./Cta.astro";
+const { title, description, publishedBy, href, image, alt } = Astro.props;
+---
+
+<div class="flex flex-col md:flex-row gap-6 md:gap-8">
+  <a class="block w-1/2 md:w-1/4" href={href}
+    ><img
+      src={image}
+      alt={alt}
+    /></a
+  >
+  <div class="md:w-3/4">
+    <div class="md:mb-16">
+      <h3
+        class="md:mb-2 font-sans font-bold text-base md:text-3xl tracking-tight"
+      >
+        {title}
+      </h3>
+      <p class="text-base md:text-xl/8 mb-6">
+        {description}<br />
+        <small>{publishedBy}</small>
+      </p>
+    </div>
+    <Cta href={href}>Read more</Cta>
+  </div>
+</div>
