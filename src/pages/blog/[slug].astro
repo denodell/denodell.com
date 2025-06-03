@@ -37,7 +37,7 @@ if (!postEntry) {
 const { frontmatter, default: Content } = postEntry[1];
 ---
 
-<BaseLayout title={frontmatter.title} slug="blog">
+<BaseLayout title={frontmatter.title} description={frontmatter.description} shortTitle={frontmatter.shortTitle} shortDescription={frontmatter.shortDescription} type="article" slug="blog">
   <ContentWrapper class="-mt-8 md:-mt-12">
     <article class="relative">
       <div
@@ -95,7 +95,7 @@ const { frontmatter, default: Content } = postEntry[1];
         🔗
         <span class="font-medium">Share</span>: <Link
           href={`https://x.com/intent/tweet?url=https://denodell.com/blog/${slug}`}
-          >Twitter / X</Link
+          >Twitter/X</Link
         > · <Link
           href={`https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://denodell.com/blog/${slug}`}
           >LinkedIn</Link

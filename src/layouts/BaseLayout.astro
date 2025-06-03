@@ -1,5 +1,6 @@
 ---
-const { title, slug } = Astro.props;
+const { title, description, slug, shortTitle, shortDescription, type } =
+	Astro.props;
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import OpenToUSJobs from "../components/OpenToUSJobs.astro";
@@ -13,7 +14,16 @@ import "../styles/global.css";
     <meta property="og:site_name" content="Den Odell" />
     <meta
       name="description"
-      content="Den Odell — Built frontends used by millions. Wrote the books that teach others how.">
+      content={description ?? "Frontend Architect · Author · Developer. Built frontends used by millions. Wrote the books that teach others how."}>
+
+    <meta property="og:type" content={type ?? "website"}>
+    <meta property="og:title" content={shortTitle ?? title}>
+    <meta property="og:description" content={shortDescription ?? description}>
+    {type === 'article' ? <meta property="og:url" content={`https://denodell.com/blog/${slug}`}> : null}
+    {type === 'article' ? <meta property="og:image" content={`https://denodell.com/images/blog/${slug}.png`}> : null}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@denodell">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="application/ld+json">
       {
