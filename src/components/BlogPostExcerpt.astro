@@ -1,15 +1,15 @@
 ---
-import { Image, Picture } from "astro:assets";
+import { Picture } from "astro:assets";
 import Link from "./Link.astro";
-const { post, variant } = Astro.props;
+const { post } = Astro.props;
 ---
-<li class="flex flex-col md:flex-row gap-4 md:gap-8">
+<li class"flex flex-col gap-4 md:gap-8">
   <a
-    href={`/blog/${post.data.slug}`}
-    class="md:w-1/4 mb-0">
-    <Picture src={post.data.image} formats={['avif', 'webp']} style="height:225px" alt="" />
+  class="block overflow-hidden rounded-t-xl md:rounded-t-2xl"
+    href={`/blog/${post.data.slug}`}>
+    <Picture src={post.data.image} formats={['avif', 'webp']} style="height:260px" alt="" />
   </a>
-  <div class="md:w-3/4">
+  <div class="p-4 md:p-8 bg-gray-100 border-gray-300 border-1 rounded-b-xl md:rounded-b-2xl">
     <Link
       href={`/blog/${post.data.slug}`}
       class="block font-sans font-bold text-xl/6 md:text-3xl/8 tracking-tight mb-2"

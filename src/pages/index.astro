@@ -1,4 +1,6 @@
 ---
+import { Picture } from "astro:assets";
+import { Image } from "astro:assets";
 import ContentWrapper from "../components/ContentWrapper.astro";
 import Cta from "../components/Cta.astro";
 import H2Title from "../components/H2Title.astro";
@@ -7,6 +9,7 @@ import Link from "../components/Link.astro";
 import NewsletterSignupHome from "../components/NewsletterSignupHome.astro";
 import WorkedWith from "../components/WorkedWith.astro";
 import { Content } from "../content/index.md";
+import denOdellImage from "../images/denodell.jpg";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
@@ -17,9 +20,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <div
           class="flex flex-col items-center md:items-start text-center md:text-left w-full md:w-2/3"
         >
-          <div
-            class="md:hidden mb-6 w-32 h-32 rounded-full bg-[url('/images/denodell.jpg')] bg-cover bg-center"
-          >
+          <div class="md:hidden mb-6 w-32 h-32 rounded-full">
+            <Image
+              src={denOdellImage}
+              alt="Den Odell"
+              class="rounded-full"
+              loading="lazy"
+              width={128}
+              height={128}
+            />
           </div>
 
           <h1 class="mb-1 text-6xl md:text-8xl font-bold tracking-tighter">
@@ -39,15 +48,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </p>
 
           <div class="flex flex-row gap-4">
-            <Cta href="mailto:contact@denodell.com">Get in touch</Cta>
-            <Cta href="/blog" inverse>Read my Journal</Cta>
+            <Cta href="/contact">Get in touch</Cta>
+            <Cta href="/blog" inverse>Latest posts</Cta>
           </div>
         </div>
         <div class="hidden md:block w-1/3">
-          <div
-            class="rounded-xl bg-[url('/images/denodell.jpg')] bg-cover bg-center w-full h-93"
-          >
-          </div>
+          <Image
+            src={denOdellImage}
+            alt="Den Odell"
+            class="rounded-2xl"
+            loading="lazy"
+            style="height: 372px;"
+          />
         </div>
       </div>
     </ContentWrapper>
@@ -79,6 +91,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               class="block"
               src="/images/pro-javascript-development.jpg"
               alt="Pro JavaScript Development book cover"
+              loading="lazy"
             /></a
           >
           <a href="/books/pro-javascript-ria-techniques"
@@ -86,6 +99,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               class="block"
               src="/images/pro-javascript-ria-techniques.jpg"
               alt="Pro JavaScript RIA Techniques book cover"
+              loading="lazy"
             /></a
           >
         </div>
@@ -94,9 +108,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </ContentWrapper>
 
   <ContentWrapper>
-    <div
-      class="prose prose-p:font-mono text-base md:text-xl/8 max-w-none"
-    >
+    <div class="prose prose-p:font-mono text-base md:text-xl/8 max-w-none">
       <Content />
     </div>
   </ContentWrapper>

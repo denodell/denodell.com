@@ -1,6 +1,7 @@
 ---
+const { class: className = "" } = Astro.props;
 ---
 
-<h2 class="uppercase mb-4 md:mb-8 font-sans font-bold tracking-tight text-xl md:text-2xl">
+<h2 class:list={["uppercase mb-4 md:mb-8 font-sans font-bold tracking-tight text-xl md:text-2xl", className]}>
     <slot />
 </h2>
