@@ -1,5 +1,5 @@
 ---
-const { title, description, slug, shortTitle, shortDescription, type } =
+const { id, title, description, slug, shortTitle, shortDescription, type } =
 	Astro.props;
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
@@ -19,8 +19,8 @@ import "../styles/global.css";
     <meta property="og:type" content={type ?? "website"}>
     <meta property="og:title" content={shortTitle ?? title}>
     <meta property="og:description" content={shortDescription ?? description}>
-    {type === 'article' ? <meta property="og:url" content={`https://denodell.com/blog/${slug}`}> : null}
-    {type === 'article' ? <meta property="og:image" content={`https://denodell.com/images/blog/${slug}.png`}> : null}
+    {type === 'article' ? <meta property="og:url" content={`https://denodell.com/blog/${id}`}> : null}
+    {type === 'article' ? <meta property="og:image" content={`https://denodell.com/images/blog/${id}.png`}> : null}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@denodell">
 
