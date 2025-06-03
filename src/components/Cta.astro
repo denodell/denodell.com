@@ -1,6 +1,6 @@
 ---
 const { href, inverse } = Astro.props;
-const target = href.startsWith("http") ? "_blank" : "_self";
+const target = href?.startsWith("http") ? "_blank" : "_self";
 ---
 
 <a

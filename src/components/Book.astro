@@ -1,10 +1,12 @@
 ---
 import Cta from "./Cta.astro";
-const { title, description, publishedBy, href, image, alt } = Astro.props;
+const { title, description, publishedBy, href, image, alt, linkText } =
+	Astro.props;
+const target = href.startsWith("http") ? "_blank" : "_self";
 ---
 
 <div class="flex flex-col md:flex-row gap-6 md:gap-8">
-  <a class="block w-1/2 md:w-1/4" href={href}
+  <a class="block w-1/2 md:w-1/4" href={href} target={target}
     ><img
       src={image}
       alt={alt}
@@ -22,6 +24,6 @@ const { title, description, publishedBy, href, image, alt } = Astro.props;
         <small>{publishedBy}</small>
       </p>
     </div>
-    <Cta href={href}>Read more</Cta>
+    <Cta href={href}>{linkText ?? "Read more"}</Cta>
   </div>
 </div>

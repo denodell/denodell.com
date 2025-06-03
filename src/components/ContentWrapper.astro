@@ -1,3 +1,7 @@
-<div class="border-b-1 border-b-gray-200 overflow-x-hidden">
+---
+const { id } = Astro.props;
+---
+
+<div id={id} class="border-b-1 border-b-gray-200 overflow-x-hidden">
   <div class:list={["max-w-5xl mx-auto p-3 py-8 md:p-5 md:py-12", Astro.props['class']]}><slot /></div>
 </div>
