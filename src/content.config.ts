@@ -26,6 +26,7 @@ const blog = defineCollection({
 			devToSlug: z.string().optional(),
 			utmCampaign: z.string().optional(),
 			relatedPosts: z.array(reference("blog")).optional(),
+			draft: z.boolean().optional(),
 		}),
 });
 

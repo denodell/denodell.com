@@ -5,7 +5,9 @@ import sanitizeHtml from "sanitize-html";
 const parser = new MarkdownIt();
 
 export async function GET(context) {
-	const blog = await getCollection("blog");
+	const blog = await getCollection("blog", ({ data }) => {
+		return data.draft !== true;
+	});
 	return rss({
 		title: "Den Odell’s Journal",
 		description:
@@ -13,7 +15,7 @@ export async function GET(context) {
 		site: context.site,
 		items: blog.map((post) => {
 			const imageUrl = post.data.image
-				? `https://denodell.com/images/blog/${post.data.image}`
+				? `https://denodell.com/images/blog/${post.data.image.src}`
 				: null;
 			const imageHtml = imageUrl
 				? `<p><img src="${imageUrl}" alt="" style="max-width:100%;height:auto;" /></p>`
