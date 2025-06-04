@@ -4,7 +4,7 @@ description: "You’re going to hate me for saying this, but I actually like bei
 date: 2025-06-04T13:00:00Z
 author: "Den Odell"
 readingTime: "3 min"
-image: "./try-a-week-on-call.png"
+image: "./images/try-a-week-on-call.png"
 imageAlt: "Developer debugging an issue with an online checkout application at 2:43 AM"
 tags: ["frontend", "engineering", "oncall", "codequality"]
 slug: try-a-week-on-call
@@ -77,4 +77,4 @@ A single week of on-call teaches you what months of bug triage can’t.
 It shows you what real-world pressure feels like, and how it exposes every weak spot in your stack.
 
 And once you’ve lived through that, you start building differently.  
-You start building better.
+_You start building better._
