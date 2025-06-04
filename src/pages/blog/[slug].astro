@@ -100,12 +100,12 @@ if (!post) {
       <p class="text-sm md:text-xl">
         🔗
         <span class="font-medium">Share</span>: <Link
-          href={`https://x.com/intent/tweet?url=https://denodell.com/blog/${slug}`}
+          href={`https://x.com/intent/tweet?url=https://denodell.com/blog/${slug}?utm_source=twitter&utm_medium=share_button&utm_campaign=${post.data.utmCampaign}`}
           >Twitter/X</Link
         > · <Link
-          href={`https://www.linkedin.com/sharing/share-offsite/?url=https://denodell.com/blog/${slug}`}
+          href={`https://www.linkedin.com/sharing/share-offsite/?url=https://denodell.com/blog/${slug}?utm_source=linkedin&utm_medium=share_button&utm_campaign=${post.data.utmCampaign}`}
           >LinkedIn</Link
-        > · <CopyLink />
+        > · <CopyLink href={`https://denodell.com/blog/${slug}?utm_source=copylink&utm_medium=share_button&utm_campaign=${post.data.utmCampaign}`} />
       </p>
     </article>
   </ContentWrapper>

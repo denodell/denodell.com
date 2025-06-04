@@ -59,6 +59,9 @@
         "devToSlug": {
           "type": "string"
         },
+        "utmCampaign": {
+          "type": "string"
+        },
         "relatedPosts": {
           "type": "array",
           "items": {

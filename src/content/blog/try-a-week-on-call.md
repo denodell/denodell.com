@@ -9,6 +9,7 @@ imageAlt: "Developer debugging an issue with an online checkout application at 2
 tags: ["frontend", "engineering", "oncall", "codequality"]
 slug: try-a-week-on-call
 devToSlug: want-to-be-a-better-frontend-engineer-try-a-week-on-call-40a5
+utmCampaign: oncall_post
 ---
 
 **You’re going to hate me for saying this, but I actually like being on-call.**  

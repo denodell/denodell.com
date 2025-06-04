@@ -24,6 +24,7 @@ const blog = defineCollection({
 				.max(4, { message: "You can use up to 4 tags only." }),
 			slug: z.string(),
 			devToSlug: z.string().optional(),
+			utmCampaign: z.string().optional(),
 			relatedPosts: z.array(reference("blog")).optional(),
 		}),
 });
