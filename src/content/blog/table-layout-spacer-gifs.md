@@ -3,7 +3,7 @@ title: "How We Laid Out the Web Before CSS: Tables and Spacer GIFs"
 description: ""
 date: 2025-06-11T13:00:00Z
 author: Den Odell
-readingTime: 3 min
+readingTime: 4 min
 image: "./images/table-layout-spacer-gifs.png"
 imageAlt: ""
 tags: ["frontend"]
@@ -25,6 +25,7 @@ HTML tables gave us something no other element did at the time — control. You 
 
 It wasn’t elegant. It definitely wasn’t semantic. But it worked.
 
+```html
 <table width="100%" cellpadding="0" cellspacing="0">
   <tr>
     <td width="200">
@@ -35,6 +36,8 @@ It wasn’t elegant. It definitely wasn’t semantic. But it worked.
     </td>
   </tr>
 </table>
+```
+
 Spacer GIFs like the one above were a standard trick. You'd create a 1×1 pixel transparent image, then stretch it using width and height attributes to force the browser to reserve space. There were whole toolkits and scripts that generated spacer-based layouts automatically.
 
 If you wanted padding, you'd nest another table. If you wanted alignment, you'd add empty cells or abuse the align attribute. And when that wasn't enough, you'd resort to comment-tag hacks and conditional rendering quirks just to get things to behave consistently across browsers.
