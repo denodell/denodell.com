@@ -1,6 +1,6 @@
 ---
-const { href, rel, style } = Astro.props;
-const target = href.toLowerCase().startsWith("http") ? "_blank" : "_self";
+const { href, rel, style, type, title, target: targetInput } = Astro.props;
+const target = targetInput ?? href.toLowerCase().startsWith("http") ? "_blank" : "_self";
 ---
 
-<a rel={rel} style={style} class:list={[Astro.props['class'], "underline underline-offset-4 decoration-2 decoration-solid decoration-gray-300 hover:decoration-black transition"]} href={href} target={target}><slot /></a>
+<a rel={rel} style={style} type={type} title={title} class:list={[Astro.props['class'], "underline underline-offset-4 decoration-2 decoration-solid decoration-gray-300 hover:decoration-black transition"]} href={href} target={target}><slot /></a>
