@@ -1,0 +1,38 @@
+---
+import { FileJson, Sparkles } from "@lucide/astro";
+---
+
+<div
+  class="p-5 rounded-lg mb-8"
+  style="background-image: linear-gradient(to right bottom, rgb(15, 23, 42), rgb(88, 28, 135), rgb(15, 23, 42));"
+>
+  <div class="flex items-center gap-3 mb-4">
+    <div class="relative">
+      <FileJson class="h-10 w-10 text-purple-400" />
+      <Sparkles
+        class="h-4 w-4 text-yellow-400 absolute -top-1 -right-1 animate-pulse"
+      />
+    </div>
+
+    <div>
+      <h1
+        class="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
+      >
+        ByteShrink
+      </h1>
+      <p class="text-sm text-purple-300">Powered by AI</p>
+    </div>
+  </div>
+
+  <p class="mt-4 text-gray-300 text-sm md:text-base mb-4">
+    Drag and drop your project's <code style="font-family: monospace;"
+      >package.json</code
+    > file into this AI tool to analyze its contents and generate insights. CLI tool
+    also available.
+  </p>
+  <a
+    class="text-gray-300 text-sm md:text-base underline underline-offset-4 decoration-2 decoration-solid decoration-gray-300 hover:decoration-white transition"
+    href="https://byteshrink.dev"
+    target="_blank">byteshrink.dev →</a
+  >
+</div>

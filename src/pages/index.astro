@@ -1,5 +1,4 @@
 ---
-import { Picture } from "astro:assets";
 import { Image } from "astro:assets";
 import ContentWrapper from "../components/ContentWrapper.astro";
 import Cta from "../components/Cta.astro";
@@ -9,6 +8,7 @@ import Link from "../components/Link.astro";
 import NewsletterSignupHome from "../components/NewsletterSignupHome.astro";
 import WorkedWith from "../components/WorkedWith.astro";
 import { Content } from "../content/index.md";
+import ByteShrink from "../components/ByteShrink.astro";
 import denOdellImage from "../images/denodell.jpg";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
@@ -57,7 +57,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             src={denOdellImage}
             alt="Den Odell"
             class="rounded-2xl"
-              loading="eager"
+            loading="eager"
             style="height: 372px;"
           />
         </div>
@@ -78,30 +78,44 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
 
       <div class="md:w-1/3 mb-0">
-        <div class="flex flex-row items-center justify-between">
-          <H2Title><a href="/books">Books</a></H2Title>
-          <Link href="/books" class="mb-4 md:mb-8 text-sm md:text-base"
-            >View all →</Link
-          >
+        <div>
+          <div class="flex flex-row items-center justify-between">
+            <H2Title><a href="/books">Open Source</a></H2Title>
+            <Link
+              href="https://github.com/denodell"
+              class="mb-4 md:mb-8 text-sm md:text-base">View GitHub →</Link
+            >
+          </div>
+
+          <ByteShrink />
         </div>
 
-        <div class="flex flex-row gap-4 mb-8 w-2/3 md:w-1/2 md:w-full">
-          <a href="/books/pro-javascript-development"
-            ><img
-              class="block"
-              src="/images/pro-javascript-development.jpg"
-              alt="Pro JavaScript Development book cover"
-              loading="lazy"
-            /></a
-          >
-          <a href="/books/pro-javascript-ria-techniques"
-            ><img
-              class="block"
-              src="/images/pro-javascript-ria-techniques.jpg"
-              alt="Pro JavaScript RIA Techniques book cover"
-              loading="lazy"
-            /></a
-          >
+        <div>
+          <div class="flex flex-row items-center justify-between">
+            <H2Title><a href="/books">Books</a></H2Title>
+            <Link href="/books" class="mb-4 md:mb-8 text-sm md:text-base"
+              >View all →</Link
+            >
+          </div>
+
+          <div class="flex flex-row gap-4 mb-8 w-2/3 md:w-1/2 md:w-full">
+            <a href="/books/pro-javascript-development"
+              ><img
+                class="block"
+                src="/images/pro-javascript-development.jpg"
+                alt="Pro JavaScript Development book cover"
+                loading="lazy"
+              /></a
+            >
+            <a href="/books/pro-javascript-ria-techniques"
+              ><img
+                class="block"
+                src="/images/pro-javascript-ria-techniques.jpg"
+                alt="Pro JavaScript RIA Techniques book cover"
+                loading="lazy"
+              /></a
+            >
+          </div>
         </div>
       </div>
     </div>
