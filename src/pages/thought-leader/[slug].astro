@@ -3,12 +3,12 @@ import ContentWrapper from "../../components/ContentWrapper.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
-	const allPosts = import.meta.glob("../../content/thought-leadership/*.md", {
+	const allPosts = import.meta.glob("../../content/thought-leader/*.md", {
 		eager: true,
 	});
 
 	return Object.keys(allPosts).map((filePath) => {
-		const slug = filePath.split("/thought-leadership/")[1].replace(".md", "");
+		const slug = filePath.split("/thought-leader/")[1].replace(".md", "");
 
 		return {
 			params: { slug },
@@ -18,7 +18,7 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params;
 
-const allPosts = import.meta.glob("../../content/thought-leadership/*.md", {
+const allPosts = import.meta.glob("../../content/thought-leader/*.md", {
 	eager: true,
 });
 
@@ -75,16 +75,6 @@ const { frontmatter, default: Content } = postEntry[1];
         <Content />
       </div>
 
-      <div class="mt-16 bg-background text-base">
-        <a
-          href="/thought-leadership/"
-          class="underline underline-offset-4 decoration-2 decoration-solid decoration-gray-300 hover:decoration-black transition"
-          >← View all posts</a>
-      </div>
-
-      <!-- 
-    <DevToMeta slug={slug} />
-    -->
     </article></ContentWrapper
   >
 </BaseLayout>
